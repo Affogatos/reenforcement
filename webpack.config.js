@@ -22,9 +22,6 @@ module.exports = {
       },
     ],
   },
-  devServer: {
-    contentBase: path.join(__dirname, 'public', 'dist'),
-  },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Affogato',
@@ -34,4 +31,8 @@ module.exports = {
       filename: 'bundle.css',
     }),
   ],
+  devServer: {
+    contentBase: path.join(__dirname, 'public', 'dist'),
+    historyApiFallback: true,
+  },
 };

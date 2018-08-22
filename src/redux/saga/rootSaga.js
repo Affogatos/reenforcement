@@ -1,6 +1,6 @@
-import { authenticationWatcher } from '../actions/authenticationActions.js';
-import { put, takeLatest, all, call } from 'redux-saga/effects';
+import { loginWatcher, logoutWatcher } from '../actions/authenticationActions.js';
+import { all } from 'redux-saga/effects';
 
 export default function* rootSaga() {
-  yield all([authenticationWatcher()]);
+  yield all([loginWatcher(), logoutWatcher()]);
 }

@@ -4,6 +4,7 @@ import createHistory from 'history/createBrowserHistory';
 
 import LoginPage from '../LoginPage.jsx';
 import HomePage from '../HomePage.jsx';
+import Favorites from '../Favorites.jsx';
 import NotFoundPage from '../NotFoundPage.jsx';
 
 import UnauthenticatedRoute from './UnauthenticatedRoute.jsx';
@@ -17,6 +18,7 @@ export default () => (
       <Switch>
         <UnauthenticatedRoute path="/" component={LoginPage} exact />
         <AuthenticatedRoute path="/dashboard" component={HomePage} exact />
+        <AuthenticatedRoute path="/favorites" component={Favorites} exact />
         <Route component={NotFoundPage} />
       </Switch>
     </div>
