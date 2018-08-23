@@ -1,0 +1,2 @@
+export const POPULATE_USER_DATA = 'POPULATE_USER_DATA';
+export const CLEAR_USER_DATA = 'CLEAR_USER_DATA';

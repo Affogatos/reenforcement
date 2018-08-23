@@ -1,17 +1,31 @@
-import React from 'react';
-import { Provider } from 'react-redux';
-import configureStore from '../redux/configure.js';
-// import '../styles/styles.scss';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import axios from 'axios';
 
 import AppRouter, { history } from './routers/AppRouter.jsx';
-const store = configureStore();
+import { logIn } from '../redux/actions/authenticationActions';
 
-export default () => {
-  return (
-    <div>
-      <Provider store={store}>
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  componentDidMount() {
+    if (!this.props.isAuthenticated) {
+      this.props.logIn();
+    }
+  }
+  render() {
+    return (
+      <div>
         <AppRouter />
-      </Provider>
-    </div>
-  );
-};
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = ({ authentication: { isAuthenticated } }) => ({ isAuthenticated });
+export default connect(
+  null,
+  { logIn }
+)(App);

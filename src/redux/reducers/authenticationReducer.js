@@ -14,7 +14,7 @@ export default (state = initialState, action) => {
     case types.LOG_IN_SUCCESS:
       return {
         ...state,
-        isAuthenticated: action.uuid,
+        isAuthenticated: true,
         authenticating: false,
       };
     case types.LOG_IN_ERROR:
