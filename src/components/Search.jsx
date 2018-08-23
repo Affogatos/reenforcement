@@ -30,7 +30,7 @@ class Search extends Component {
           <input
             value={this.state.val}
             onChange={e => this.handleChange(e)}
-            placeholder={this.props.placeholder && this.props.placeholder}
+            placeholder={'zip code, or city/state'}
           />
           <button>Search</button>
         </form>

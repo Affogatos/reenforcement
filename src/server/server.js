@@ -92,7 +92,7 @@ app.post('/is-authenticated', (req, res) => {
     userData = {
       name: 'Brendan Morrell',
       uuid,
-      favorites: ['dogs', 'cats', 'birds'],
+      favorites: [],
       age: 29,
       isAuthenticated: true,
     };

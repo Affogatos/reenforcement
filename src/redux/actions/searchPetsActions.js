@@ -11,10 +11,6 @@ export const getQuery = state => state.petSearch.query;
 function* startPetSearch() {
   try {
     const query = yield select(getQuery);
-    console.log('​function*startPetSearch -> query', query);
-    console.log('​function*startPetSearch -> query', query);
-    console.log('​function*startPetSearch -> query', query);
-    console.log(createQueryString(query));
     const results = yield axios.get(createQueryString(query));
     const payload = parseAnimalData(results);
     yield put({ type: types.SEARCH_PETS_SUCCESS, payload });
